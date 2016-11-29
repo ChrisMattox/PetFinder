@@ -3,19 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script type="text/javascript" src="vendor/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route.min.js"></script>
     <script type="text/javascript" src="scripts/client.js"></script>
     <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script type="text/javascript" src="/scripts/controllers/dogs.controller.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/cats.controller.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/bird.controller.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
   </head>
-  <body ng-app="app" ng-controller="firstController as fc">
-    <header class="jumbotron">
-      <h1 class="container">{{fc.message}} Angular Node Express Starter</h1>
-    </header>
-    <div class="container">
-      <div class="">
-        {{fc.animal.contact.phone.$t}}
-      </div>
-      <img ng-src="{{fc.animal.media.photos.photo[2].$t}}" />
+  <body ng-app="app">
+
+    <header ng-include="'/views/templates/header.html'" class="jumbotron text-center"></header>
+
+    <div ng-include="'/views/templates/nav.html'"></div>
+    <div class ='mainPadding'>
+    <main ng-view></main>
     </div>
+    <!-- <footer ng-include="'/views/templates/footer.html'"></footer> -->
+
   </body>
 </html>
